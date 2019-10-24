@@ -9,7 +9,10 @@ style('cas', 'settings');
 
 <div id="cas" class="section">
     <h2><?php p($l->t("CAS Server"))?></h2>
-    <p class="settings-hint"><?php p($l->t("Client should be configured to use the following CAS base URL: "))?></p>
+    <p class="settings-hint">
+        <?php p($l->t("Client should be configured to use the following CAS base URL: "))?><br/>
+        <a href="<?php p($_["baseUrl"])?>"><?php p($_["baseUrl"])?></a>
+    </p>
     <h3><?php p($l->t("Service Providers"))?></h3>
     <div id="cas-clients" class="hidden">
         <table class="grid">

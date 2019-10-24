@@ -1,0 +1,26 @@
+{ "translations": {
+    "Unrestricted" : "Uneingeschränkt",
+    "Match prefix" : "Nur Prefix",
+    "Exact match" : "Exakt",
+    "Regular Expression" : "Regulärer Ausdruck",
+    "CAS Server" : "CAS Server",
+    "Client should be configured to use the following CAS base URL: " : "Die Client-Anwendungen sollten mit folgender CAS-Server Basis URL konfiguriert werden: ",
+    "Service Providers" : "Service Provider",
+    "ID" : "ID",
+    "URL" : "URL",
+    "URL match type" : "URL Überprüfung",
+    "Groups" : "Gruppen",
+    "Add service provider" : "Service Provider hinzufügen",
+    "Save" : "Speichern",
+    "Saving changes ..." : "Änderungen werden gespeichert ...",
+    "Loading list of CAS clients ..." : "Lade Liste der CAS Anwendungen ...",
+    "This service is restriced!" : "Zugriff auf diese Anwendung ist eingeschränkt!",
+    "You are not allowed to login to this service." : "Sie haben nicht die nötigen Zugriffsrechte um sich bei dieser Anwendung anzumelden.",
+    "Unknown service!" : "Unbekannte Anwendung!",
+    "You tried to login to an unknown service, please contact the administrator." : "Sie haben versucht sich bei einer Anwendung anzumelden, die nicht im System hinterlegt ist. Bitte wenden Sie sich an den Administrator.",
+    "Internal server error!" : "Interner Fehler!",
+    "Due to technical problems, your login request cannot be processed right now. Please try again later or contact the administrator." : "Aufgrund von technischen Problemen kann Ihre Anfrage nicht bearbeitet werden. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie den Administrator.",
+    "CAS login successful" : "CAS Anmeldung erfolgreich",
+    "If you are not being redirected, please click here." : "Falls Sie nicht automatisch weitergeleitet werden, klicken Sie hier."
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

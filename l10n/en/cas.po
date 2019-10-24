@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ownCloud Apps package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Apps 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2019-10-24 22:27+0200\n"
+"PO-Revision-Date: 2019-10-24 22:40+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+
+#: js/settings.js:22
+msgid "Unrestricted"
+msgstr "Unrestricted"
+
+#: js/settings.js:48
+msgid "Match prefix"
+msgstr "Match prefix"
+
+#: js/settings.js:49
+msgid "Exact match"
+msgstr "Exact match"
+
+#: js/settings.js:50
+msgid "Regular Expression"
+msgstr "Regular Expression"
+
+#: templates/admin.php:11
+msgid "CAS Server"
+msgstr "CAS Server"
+
+#: templates/admin.php:12
+msgid "Client should be configured to use the following CAS base URL: "
+msgstr "Client should be configured to use the following CAS base URL: "
+
+#: templates/admin.php:13
+msgid "Service Providers"
+msgstr "Service Providers"
+
+#: templates/admin.php:18
+msgid "ID"
+msgstr "ID"
+
+#: templates/admin.php:19
+msgid "URL"
+msgstr "URL"
+
+#: templates/admin.php:20
+msgid "URL match type"
+msgstr "URL match type"
+
+#: templates/admin.php:21
+msgid "Groups"
+msgstr "Groups"
+
+#: templates/admin.php:29
+msgid "Add service provider"
+msgstr "Add service provider"
+
+#: templates/admin.php:30
+msgid "Save"
+msgstr "Save"
+
+#: templates/admin.php:33
+msgid "Saving changes ..."
+msgstr "Saving changes ..."
+
+#: templates/admin.php:38
+msgid "Loading list of CAS clients ..."
+msgstr "Loading list of CAS clients ..."
+
+#: templates/login.php:10
+msgid "This service is restriced!"
+msgstr "This service is restriced!"
+
+#: templates/login.php:11
+msgid "You are not allowed to login to this service."
+msgstr "You are not allowed to login to this service."
+
+#: templates/login.php:15
+msgid "Unknown service!"
+msgstr "Unknown service!"
+
+#: templates/login.php:16
+msgid ""
+"You tried to login to an unknown service, please contact the administrator."
+msgstr ""
+"You tried to login to an unknown service, please contact the administrator."
+
+#: templates/login.php:20
+msgid "Internal server error!"
+msgstr "Internal server error!"
+
+#: templates/login.php:21
+msgid ""
+"Due to technical problems, your login request cannot be processed right now. "
+"Please try again later or contact the administrator."
+msgstr ""
+"Due to technical problems, your login request cannot be processed right now. "
+"Please try again later or contact the administrator."
+
+#: templates/login.php:31 templates/login.php:43
+msgid "CAS login successful"
+msgstr "CAS login successful"
+
+#: templates/login.php:34 templates/login.php:45
+msgid "If you are not being redirected, please click here."
+msgstr "If you are not being redirected, please click here."

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 /**
- * @copyright Copyright (c) 2017 Lukas Reschke <lukas@statuscode.ch>
+ * @copyright Copyright (c) 2019 Marco Ziech <marco+nc@ziech.net>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -22,26 +22,26 @@ declare(strict_types=1);
 
 namespace OCA\cas\Settings;
 
-use OCA\cas\Service\SettingsService;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\IURLGenerator;
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
 
     /**
-     * @var SettingsService
+     * @var IURLGenerator
      */
-    private $settingsService;
+    private $urlGenerator;
 
-    public function __construct(SettingsService $settingsService) {
-        $this->settingsService = $settingsService;
+    public function __construct(IURLGenerator $urlGenerator) {
+        $this->urlGenerator = $urlGenerator;
     }
 
     public function getForm(): TemplateResponse {
 		return new TemplateResponse(
 			'cas',
 			'admin',
-			[ "services" =>  $this->settingsService->getServices() ],
+			[ "baseUrl" => $this->urlGenerator->getAbsoluteURL($this->urlGenerator->linkTo("cas", "")) ],
 			''
 		);
 	}
