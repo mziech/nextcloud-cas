@@ -121,9 +121,9 @@ class TicketService {
 
     private function getMemberOf(IUser $user) {
         $groups = $this->groupManager->getUserGroups($user);
-        return array_map(function (IGroup $group) {
+        return array_values(array_map(function (IGroup $group) {
             return $group->getGID();
-        }, $groups);
+        }, $groups));
     }
 
 }
