@@ -62,12 +62,13 @@ class CasController extends Controller {
 	public function login($service, $method = "GET") {
 	    $model = [];
 	    try {
+            if ($service === null) {
+                throw new CasException("No CAS service specified", "INVALID_SERVICE");
+            }
+
             $model["ticket"] = $this->ticketService->createServiceTicket($service);
             $model["service"] = $service;
             $model["method"] = $method;
-
-            //return new RedirectResponse($service . (strpos($service, "?") === FALSE ? '?' : '&')
-            //    . "ticket=" . $ticket->getTicket());
         } catch (CasException $exception) {
 	        $model["errorCode"] = $exception->getCasCode();
         }
