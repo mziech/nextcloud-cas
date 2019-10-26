@@ -40,12 +40,14 @@ class CasXmlResponse extends Response {
     private function xmlNode(\SimpleXMLElement $parent, $data) {
         foreach ($data as $k => $v) {
             if (is_array($v)) {
-                if (array_values($v) === $v) {
+                if (array_values($v) !== $v) {
+                    // Associative array
+                    $this->xmlNode($parent->addChild("cas:$k"), $v);
+                } else {
+                    // Indexed / sequential array
                     foreach ($v as $it) {
                         $parent->addChild("cas:$k", $it);
                     }
-                } else {
-                    $this->xmlNode($parent->addChild("cas:$k"), $v);
                 }
             } else {
                 $parent->addChild("cas:$k", $v);
