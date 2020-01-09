@@ -109,7 +109,7 @@ class TicketService {
         ];
 
         if ($includeAttributes) {
-            $response["serviceResponse"]["authenticationSuccess"]["attributes"] = [
+            $response["authenticationSuccess"]["attributes"] = [
                 "displayName" => $user->getDisplayName(),
                 "email" => $user->getEMailAddress(),
                 "memberOf" => $this->getMemberOf($user)
