@@ -48,6 +48,7 @@ if (isset($_["ticket"]) && isset($_["service"])) {
         ?>
 
         <div class="warning">
+            <span class="icon-loading-small inlineblock">&nbsp;</span>&nbsp;
             <?php p($l->t('CAS login successful')); ?><br>
             <form id="cas-login-redirect" action="<?php p($_["service"]); ?>" method="post">
                 <input type="hidden" name="token" value="<?php p($_["ticket"]->getTicket()); ?>">
@@ -60,6 +61,7 @@ if (isset($_["ticket"]) && isset($_["service"])) {
         ?>
 
         <div class="warning">
+            <span class="icon-loading-small inlineblock">&nbsp;</span>&nbsp;
             <?php p($l->t('CAS login successful')); ?><br>
             <a id="cas-login-redirect"
                href="<?php p($redirectUrl); ?>"><?php p($l->t('If you are not being redirected, please click here.')); ?></a>
