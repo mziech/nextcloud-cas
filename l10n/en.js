@@ -12,6 +12,8 @@ OC.L10N.register(
     "URL" : "URL",
     "URL match type" : "URL match type",
     "Groups" : "Groups",
+    "Strictly adhere to CAS specification, do not send attributes for 2.0 tickets." : "Strictly adhere to CAS specification, do not send attributes for 2.0 tickets.",
+    "Strict" : "Strict",
     "Add service provider" : "Add service provider",
     "Save" : "Save",
     "Saving changes ..." : "Saving changes ...",

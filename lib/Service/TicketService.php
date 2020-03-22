@@ -99,6 +99,11 @@ class TicketService {
             throw new CasException("CAS ticket $ticket for service URL '$service' is not a renew ticket'", "INVALID_TICKET");
         }
 
+        $s = $this->settingsService->getService($service);
+        if ($s === null) {
+            throw new CasException("Cannot find CAS service for URL: $service", "INVALID_SERVICE");
+        }
+
         /** @var IUser $user */
         $user = $this->userManager->get($entity->getUid());
 
@@ -108,7 +113,7 @@ class TicketService {
             ]
         ];
 
-        if ($includeAttributes) {
+        if ($includeAttributes || !isset($s['strict']) || !$s['strict']) {
             $response["authenticationSuccess"]["attributes"] = [
                 "displayName" => $user->getDisplayName(),
                 "email" => $user->getEMailAddress(),

@@ -42,6 +42,7 @@ style('cas', 'settings');
                 <th><?php p($l->t("URL"))?></th>
                 <th><?php p($l->t("URL match type"))?></th>
                 <th><?php p($l->t("Groups"))?></th>
+                <th><abbr title="<?php p($l->t("Strictly adhere to CAS specification, do not send attributes for 2.0 tickets."))?>"><?php p($l->t("Strict"))?></abbr></th>
                 <th></th>
             </tr>
             </thead>

@@ -111,6 +111,28 @@ class CasController extends Controller {
         return $this->serviceValidate($service, $ticket, $format, $renew, true);
     }
 
+    /**
+     * Same as #serviceValidateV2 but would ALSO validate proxy tickets, which are not supported at the moment.
+     *
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     * @PublicPage
+     */
+    public function proxyValidateV2($service, $ticket, $format = "XML", $renew = false) {
+        return $this->serviceValidate($service, $ticket, $format, $renew, false);
+    }
+
+    /**
+     * Same as #serviceValidateV3 but would ALSO validate proxy tickets, which are not supported at the moment.
+     *
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     * @PublicPage
+     */
+    public function proxyValidateV3($service, $ticket, $format = "XML", $renew = false) {
+        return $this->serviceValidate($service, $ticket, $format, $renew, true);
+    }
+
     private function serviceValidate($service, $ticket, $format, $renew, $includeAttributes) {
         try {
             $this->requireParam($service, "service");

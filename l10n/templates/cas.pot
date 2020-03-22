@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud Apps 8.0.0\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2019-10-24 22:27+0200\n"
+"POT-Creation-Date: 2020-03-22 11:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,97 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: js/settings.js:22
+#: js/settings.js:42
 msgid "Unrestricted"
 msgstr ""
 
-#: js/settings.js:48
+#: js/settings.js:68
 msgid "Match prefix"
 msgstr ""
 
-#: js/settings.js:49
+#: js/settings.js:69
 msgid "Exact match"
 msgstr ""
 
-#: js/settings.js:50
+#: js/settings.js:70
 msgid "Regular Expression"
 msgstr ""
 
-#: templates/admin.php:11
+#: templates/admin.php:31
 msgid "CAS Server"
 msgstr ""
 
-#: templates/admin.php:12
+#: templates/admin.php:33
 msgid "Client should be configured to use the following CAS base URL: "
 msgstr ""
 
-#: templates/admin.php:13
+#: templates/admin.php:36
 msgid "Service Providers"
 msgstr ""
 
-#: templates/admin.php:18
+#: templates/admin.php:41
 msgid "ID"
 msgstr ""
 
-#: templates/admin.php:19
+#: templates/admin.php:42
 msgid "URL"
 msgstr ""
 
-#: templates/admin.php:20
+#: templates/admin.php:43
 msgid "URL match type"
 msgstr ""
 
-#: templates/admin.php:21
+#: templates/admin.php:44
 msgid "Groups"
 msgstr ""
 
-#: templates/admin.php:29
+#: templates/admin.php:45
+msgid ""
+"Strictly adhere to CAS specification, do not send attributes for 2.0 tickets."
+msgstr ""
+
+#: templates/admin.php:45
+msgid "Strict"
+msgstr ""
+
+#: templates/admin.php:53
 msgid "Add service provider"
 msgstr ""
 
-#: templates/admin.php:30
+#: templates/admin.php:54
 msgid "Save"
 msgstr ""
 
-#: templates/admin.php:33
+#: templates/admin.php:57
 msgid "Saving changes ..."
 msgstr ""
 
-#: templates/admin.php:38
+#: templates/admin.php:62
 msgid "Loading list of CAS clients ..."
 msgstr ""
 
-#: templates/login.php:10
+#: templates/login.php:30
 msgid "This service is restriced!"
 msgstr ""
 
-#: templates/login.php:11
+#: templates/login.php:31
 msgid "You are not allowed to login to this service."
 msgstr ""
 
-#: templates/login.php:15
+#: templates/login.php:35
 msgid "Unknown service!"
 msgstr ""
 
-#: templates/login.php:16
+#: templates/login.php:36
 msgid ""
 "You tried to login to an unknown service, please contact the administrator."
 msgstr ""
 
-#: templates/login.php:20
+#: templates/login.php:40
 msgid "Internal server error!"
 msgstr ""
 
-#: templates/login.php:21
+#: templates/login.php:41
 msgid ""
 "Due to technical problems, your login request cannot be processed right now. "
 "Please try again later or contact the administrator."
 msgstr ""
 
-#: templates/login.php:31 templates/login.php:43
+#: templates/login.php:51 templates/login.php:63
 msgid "CAS login successful"
 msgstr ""
 
-#: templates/login.php:34 templates/login.php:45
+#: templates/login.php:54 templates/login.php:65
 msgid "If you are not being redirected, please click here."
 msgstr ""

@@ -70,6 +70,8 @@ function CasAdmin($cas) {
                 .append($('<option>').attr('value', 'REGEX').text(t('cas', 'Regular Expression')))
                 .val(service.urlMatchType || 'PREFIX')))
             .append($('<td>').append(createGroups(service.groups || [])))
+            .append($('<td>').append($('<input>').attr('name', 'strict')
+                .attr('type', 'checkbox').attr('value', 'true').prop('checked', service.strict)))
             .append($('<td>').append('<button class="icon-delete js-cas-delete">&nbsp;</button>'))
             ;
     }

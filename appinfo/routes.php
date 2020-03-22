@@ -8,5 +8,7 @@ return [
         ['name' => 'Cas#validate', 'url' => '/validate', 'verb' => 'GET'],
         ['name' => 'Cas#serviceValidateV2', 'url' => '/serviceValidate', 'verb' => 'GET'],
         ['name' => 'Cas#serviceValidateV3', 'url' => '/p3/serviceValidate', 'verb' => 'GET'],
+        ['name' => 'Cas#proxyValidateV2', 'url' => '/proxyValidate', 'verb' => 'GET'],
+        ['name' => 'Cas#proxyValidateV3', 'url' => '/p3/proxyValidate', 'verb' => 'GET'],
     ]
 ];
