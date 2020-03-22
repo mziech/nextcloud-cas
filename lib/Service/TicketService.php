@@ -117,7 +117,11 @@ class TicketService {
             $response["authenticationSuccess"]["attributes"] = [
                 "displayName" => $user->getDisplayName(),
                 "email" => $user->getEMailAddress(),
-                "memberOf" => $this->getMemberOf($user)
+                "memberOf" => $this->getMemberOf($user),
+
+                // Compatibility extensions:
+                "commaSeparatedGroups" => implode(',', $this->getMemberOf($user)),
+                "dotSpaceUsername" => str_replace(' ', '.', $entity->getUid()),
             ];
         }
 
