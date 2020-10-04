@@ -15,7 +15,7 @@
     <category>integration</category>
     <dependencies>
         <owncloud min-version="10"/>
-        <nextcloud min-version="15" max-version="18"/>
+        <nextcloud min-version="15" max-version="19"/>
     </dependencies>
     <settings>
         <admin>OCA\cas\Settings\Admin</admin>
