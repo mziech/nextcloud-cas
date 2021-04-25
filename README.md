@@ -1,3 +1,5 @@
+![.github/workflows/release.yml](https://github.com/mziech/nextcloud-cas/workflows/.github/workflows/release.yml/badge.svg)
+
 # CAS Server
 
 This is an very basic and experimental implementation of the CAS server protocol for NextCloud.
@@ -34,4 +36,10 @@ Basically everything else.
 
 ## Install
 
-Place the contents of this repository in `nextcloud/apps/cas`
+This is an experimental app which needs to be installed manually.
+
+1. Download the latest release from 
+https://github.com/mziech/nextcloud-cas/releases/latest/download/cas.tar.gz
+2. Unpack the archive to the `apps` folder of your Nextcloud installation 
+3. Check **Apps / Deactivated Apps** whether it contains **CAS Server**
+and activate, if required.
