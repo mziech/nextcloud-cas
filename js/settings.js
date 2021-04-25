@@ -1,5 +1,5 @@
 /**
- * @copyright Copyright (c) 2019-2021 Marco Ziech <marco+nc@ziech.net>
+ * @copyright Copyright (c) 2019 Marco Ziech <marco+nc@ziech.net>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -106,7 +106,7 @@ function CasAdmin($cas) {
 
         $.ajax({
             method: 'POST',
-            url: OC.generateUrl(OC.appswebroots['cas'] + '/admin'),
+            url: OC.generateUrl('/apps/cas/admin'),
             data: JSON.stringify(json),
             contentType: 'application/json'
         }).always(function () {
@@ -119,7 +119,7 @@ function CasAdmin($cas) {
         $(this).closest('tr').remove();
     });
 
-    $.getJSON(OC.generateUrl(OC.appswebroots['cas'] + '/admin')).done(function (data) {
+    $.getJSON(OC.generateUrl('/apps/cas/admin')).done(function (data) {
         $services.empty();
         groups = data.groups;
         $.each(data.services, function (i, service) {
