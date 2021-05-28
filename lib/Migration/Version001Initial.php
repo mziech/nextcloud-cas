@@ -22,7 +22,6 @@
 namespace OCA\cas\Migration;
 
 
-use Doctrine\DBAL\Types\Type;
 use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IMigrationStep;
 use OCP\Migration\IOutput;
@@ -69,21 +68,21 @@ class Version001Initial implements IMigrationStep {
         /** @var ISchemaWrapper $schema */
         $schema = $schemaClosure();
         $ticketTable = $schema->createTable("cas_ticket");
-        $ticketTable->addColumn("ticket", Type::STRING, [
+        $ticketTable->addColumn("ticket", 'string', [
             "notnull" => true,
             "length" => 100
         ]);
-        $ticketTable->addColumn("created", Type::DATETIME, [
+        $ticketTable->addColumn("created", 'datetime', [
             "notnull" => true
         ]);
-        $ticketTable->addColumn("expiry", Type::DATETIME, [
+        $ticketTable->addColumn("expiry", 'datetime', [
             "notnull" => true
         ]);
-        $ticketTable->addColumn("service", Type::STRING, [
+        $ticketTable->addColumn("service", 'string', [
             "length" => 4096
         ]);
-        $ticketTable->addColumn("renew", Type::SMALLINT, []);
-        $ticketTable->addColumn("uid", Type::STRING, [
+        $ticketTable->addColumn("renew", 'smallint');
+        $ticketTable->addColumn("uid", 'string', [
             "notnull" => true,
             "length" => 255
         ]);
