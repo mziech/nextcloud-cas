@@ -5,7 +5,7 @@
     <name>CAS Server</name>
     <summary>CAS protocol server (IdP)</summary>
     <description><![CDATA[This server implements a basic version of the CAS single sign-on protocol.]]></description>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <licence>agpl</licence>
     <author>Marco Ziech &lt;marco+nc@ziech.net&gt;</author>
     <namespace>cas</namespace>
@@ -17,7 +17,7 @@
     <bugs>https://github.com/mziech/nextcloud-cas/issues</bugs>
     <dependencies>
         <owncloud min-version="10"/>
-        <nextcloud min-version="15" max-version="20"/>
+        <nextcloud min-version="15" max-version="21"/>
     </dependencies>
     <settings>
         <admin>OCA\cas\Settings\Admin</admin>
