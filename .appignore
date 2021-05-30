@@ -6,5 +6,6 @@ node_modules
 src
 package.json
 package-lock.json
+*.js.map
 
 cas.tar.gz
