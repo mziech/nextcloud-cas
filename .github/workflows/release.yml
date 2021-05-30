@@ -7,7 +7,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14.x
       - name: Build
+        run: npm install && npm run build
+      - name: Pack
         run: touch cas.tar.gz && tar --exclude-ignore=.appignore --transform 's,^\./,cas/,' -cvzf cas.tar.gz .
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.0

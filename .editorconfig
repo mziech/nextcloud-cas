@@ -1,0 +1,17 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# Unix-style newlines with a newline ending every file
+[{*.vue,*.js}]
+end_of_line = lf
+insert_final_newline = true
+
+# Set default charset
+charset = utf-8
+
+# 4 space tab indentation
+indent_style = tab
+indent_size = 4
+
+# Line length form NC coding guidelines
+trim_trailing_whitespace = true
+max_line_length = 80

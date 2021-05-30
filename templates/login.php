@@ -22,7 +22,9 @@
 /** @var $l \OCP\IL10N */
 /** @var $_ array */
 
-script('cas', 'login');
+$manifest = json_decode(file_get_contents(__DIR__ . "/../js/manifest.json"), true);
+script('cas', basename($manifest['login.js'], ".js"));
+
 ?>
 
 <?php if (isset($_["errorCode"]) && $_["errorCode"] === "FORBIDDEN") { ?>

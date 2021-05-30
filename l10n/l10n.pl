@@ -39,12 +39,14 @@ sub crawlFiles{
 	foreach my $i ( @files ){
 		next if substr( $i, 0, 1 ) eq '.';
 		next if $i eq 'l10n';
+		next if $i eq 'node_modules';
+		next if $i eq 'js';
 
 		if( -d $dir.'/'.$i ){
 			push( @found, crawlFiles( $dir.'/'.$i ));
 		}
 		else{
-			push(@found,$dir.'/'.$i) if $i =~ /\.js$/ || $i =~ /\.php$/;
+			push(@found,$dir.'/'.$i) if $i =~ /\.(js|php|vue)$/ ;
 		}
 	}
 
@@ -84,7 +86,7 @@ my $whereami = cwd();
 die( "Program must be executed in a l10n-folder called 'l10n'" ) unless $whereami =~ m/\/l10n$/;
 
 # Where are i18n-files?
-my @dirs = crawlPrograms( $place, 0 );
+my @dirs = ( $place );
 
 # Languages
 my @languages = ();
@@ -110,15 +112,17 @@ if( $task eq 'read' ){
 
 		foreach my $file ( @totranslate ){
 			next if $ignore{$file};
+			my $language = '';
 			my $keywords = '';
-			if( $file =~ /\.js$/ ){
-				$keywords = '--keyword=t:2 --keyword=n:2,3';
+			if( $file =~ /\.(js|vue)$/ ){
+				$keywords = '--keyword=t:2 --keyword=translate:2 --keyword=n:2,3 --keyword=translatePlural:2,3';
+				$language = $file =~ /\.vue$/ ? 'Python' : 'JavaScript';
 			}
 			else{
 				$keywords = '--keyword=t --keyword=n:1,2';
+				$language = 'PHP';
 			}
-			my $language = ( $file =~ /\.js$/ ? 'Python' : 'PHP');
-			my $joinexisting = ( -e $output ? '--join-existing' : '');
+		    my $joinexisting = ( -e $output ? '--join-existing' : '');
 			print "    Reading $file\n";
 			`xgettext --output="$output" $joinexisting $keywords --language=$language "$file" --add-comments=TRANSLATORS --from-code=UTF-8 --package-version="8.0.0" --package-name="ownCloud Apps" --msgid-bugs-address="translations\@owncloud.org"`;
 		}

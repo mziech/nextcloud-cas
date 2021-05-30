@@ -1,1 +1,9 @@
 *~
+
+# Built by webpack
+/css
+/js
+
+.DS_Store
+node_modules
+/node_modules

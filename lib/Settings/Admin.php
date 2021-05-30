@@ -28,20 +28,11 @@ use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
 
-    /**
-     * @var IURLGenerator
-     */
-    private $urlGenerator;
-
-    public function __construct(IURLGenerator $urlGenerator) {
-        $this->urlGenerator = $urlGenerator;
-    }
-
     public function getForm(): TemplateResponse {
 		return new TemplateResponse(
 			'cas',
 			'admin',
-			[ "baseUrl" => $this->urlGenerator->getAbsoluteURL($this->urlGenerator->linkTo("cas", "")) ],
+			[],
 			''
 		);
 	}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud Apps 8.0.0\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2020-03-22 11:50+0100\n"
+"POT-Creation-Date: 2021-05-30 14:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,106 +17,110 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: js/settings.js:42
-msgid "Unrestricted"
-msgstr ""
-
-#: js/settings.js:68
-msgid "Match prefix"
-msgstr ""
-
-#: js/settings.js:69
-msgid "Exact match"
-msgstr ""
-
-#: js/settings.js:70
-msgid "Regular Expression"
-msgstr ""
-
-#: templates/admin.php:31
+#: src/App.vue:23
 msgid "CAS Server"
 msgstr ""
 
-#: templates/admin.php:33
+#: src/App.vue:26
 msgid "Client should be configured to use the following CAS base URL: "
 msgstr ""
 
-#: templates/admin.php:36
+#: src/App.vue:30
 msgid "Service Providers"
 msgstr ""
 
-#: templates/admin.php:41
+#: src/App.vue:36
 msgid "ID"
 msgstr ""
 
-#: templates/admin.php:42
+#: src/App.vue:37
 msgid "URL"
 msgstr ""
 
-#: templates/admin.php:43
+#: src/App.vue:38
 msgid "URL match type"
 msgstr ""
 
-#: templates/admin.php:44
+#: src/App.vue:39
 msgid "Groups"
 msgstr ""
 
-#: templates/admin.php:45
+#: src/App.vue:41
+msgid "Strict"
+msgstr ""
+
+#: src/App.vue:52
+msgid "Match prefix"
+msgstr ""
+
+#: src/App.vue:53
+msgid "Exact match"
+msgstr ""
+
+#: src/App.vue:54
+msgid "Regular Expression"
+msgstr ""
+
+#: src/App.vue:78
+msgid "Add service provider"
+msgstr ""
+
+#: src/App.vue:81
+msgid "Save"
+msgstr ""
+
+#: src/App.vue:85
+msgid "Saving changes ..."
+msgstr ""
+
+#: src/App.vue:90
+msgid "Loading list of CAS clients ..."
+msgstr ""
+
+#: src/App.vue:110
+msgid "Unrestricted"
+msgstr ""
+
+#: src/App.vue:111
 msgid ""
 "Strictly adhere to CAS specification, do not send attributes for 2.0 tickets."
 msgstr ""
 
-#: templates/admin.php:45
-msgid "Strict"
+#: src/App.vue:161
+msgid "Failed to save CAS settings"
 msgstr ""
 
-#: templates/admin.php:53
-msgid "Add service provider"
-msgstr ""
-
-#: templates/admin.php:54
-msgid "Save"
-msgstr ""
-
-#: templates/admin.php:57
-msgid "Saving changes ..."
-msgstr ""
-
-#: templates/admin.php:62
-msgid "Loading list of CAS clients ..."
-msgstr ""
-
-#: templates/login.php:30
+#: templates/login.php:32
 msgid "This service is restriced!"
 msgstr ""
 
-#: templates/login.php:31
+#: templates/login.php:33
 msgid "You are not allowed to login to this service."
 msgstr ""
 
-#: templates/login.php:35
+#: templates/login.php:37
 msgid "Unknown service!"
 msgstr ""
 
-#: templates/login.php:36
+#: templates/login.php:38
 msgid ""
 "You tried to login to an unknown service, please contact the administrator."
 msgstr ""
 
-#: templates/login.php:40
+#: templates/login.php:42
 msgid "Internal server error!"
 msgstr ""
 
-#: templates/login.php:41
+#: templates/login.php:43
 msgid ""
 "Due to technical problems, your login request cannot be processed right now. "
 "Please try again later or contact the administrator."
 msgstr ""
 
-#: templates/login.php:51 templates/login.php:63
+#: templates/login.php:54 templates/login.php:67
 msgid "CAS login successful"
 msgstr ""
 
-#: templates/login.php:54 templates/login.php:65
+#: templates/login.php:57 templates/login.php:69
 msgid "If you are not being redirected, please click here."
 msgstr ""

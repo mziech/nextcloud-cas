@@ -25,17 +25,22 @@ use OCA\cas\Service\SettingsService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
+use OCP\IURLGenerator;
 
 class AdminController extends Controller {
-	private $userId;
+    /**
+     * @var IURLGenerator
+     */
+    private $urlGenerator;
+
     /**
      * @var SettingsService
      */
     private $settingsService;
 
-    public function __construct($AppName, IRequest $request, $UserId, SettingsService $settingsService) {
+    public function __construct($AppName, IRequest $request, IURLGenerator $urlGenerator, SettingsService $settingsService) {
 		parent::__construct($AppName, $request);
-		$this->userId = $UserId;
+        $this->urlGenerator = $urlGenerator;
         $this->settingsService = $settingsService;
     }
 
@@ -44,6 +49,7 @@ class AdminController extends Controller {
      */
     public function get() {
         return new JSONResponse([
+            "baseUrl" => $this->urlGenerator->getAbsoluteURL("/apps/{$this->appName}/"),
             "services" => $this->settingsService->getServices(),
             "groups" => $this->settingsService->getGroups()
         ]);
