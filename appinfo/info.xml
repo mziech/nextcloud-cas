@@ -14,10 +14,13 @@
     </types>
     <category>integration</category>
     <website>https://github.com/mziech/nextcloud-cas</website>
+    <discussion>https://github.com/mziech/nextcloud-cas/discussions</discussion>
     <bugs>https://github.com/mziech/nextcloud-cas/issues</bugs>
+    <repository>https://github.com/mziech/nextcloud-cas</repository>
+    <screenshot>https://raw.githubusercontent.com/mziech/nextcloud-cas/master/img/screenshot.png</screenshot>
     <dependencies>
         <owncloud min-version="10"/>
-        <nextcloud min-version="15" max-version="21"/>
+        <nextcloud min-version="15" max-version="22"/>
     </dependencies>
     <settings>
         <admin>OCA\cas\Settings\Admin</admin>
