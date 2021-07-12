@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\cas\Domain;
+namespace OCA\Cas\Domain;
 
 use OCP\AppFramework\Db\Entity;
 

@@ -20,7 +20,7 @@ declare(strict_types=1);
  *
  */
 
-namespace OCA\cas\Settings;
+namespace OCA\Cas\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IURLGenerator;

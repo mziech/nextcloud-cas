@@ -19,11 +19,11 @@
  *
  */
 
-namespace OCA\cas\Controller;
+namespace OCA\Cas\Controller;
 
 use OC\AppFramework\Http;
-use OCA\cas\Service\CasException;
-use OCA\cas\Service\TicketService;
+use OCA\Cas\Service\CasException;
+use OCA\Cas\Service\TicketService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataDisplayResponse;
 use OCP\AppFramework\Http\JSONResponse;

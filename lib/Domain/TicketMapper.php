@@ -19,11 +19,12 @@
  *
  */
 
-namespace OCA\cas\Domain;
+namespace OCA\Cas\Domain;
 
 
+use DateInterval;
+use DateTimeImmutable;
 use OCP\AppFramework\Db\DoesNotExistException;
-use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 use OCP\AppFramework\Db\QBMapper;
 use OCP\DB\QueryBuilder\IQueryBuilder;
 use OCP\IDBConnection;
@@ -52,14 +53,13 @@ class TicketMapper extends QBMapper {
         }
     }
 
-    public function deleteOldTickets() {
+    public function deleteOldTickets(DateTimeImmutable $maxCreated, DateTimeImmutable $maxExpiry) {
         $qb = $this->db->getQueryBuilder();
-        $qb->delete()
-            ->from("cas_ticket")
+        $qb->delete("cas_ticket")
             ->where(
-                $qb->expr()->lt('created', $qb->createNamedParameter((new \DateTime())->sub(new \DateInterval("PT7D")), IQueryBuilder::PARAM_DATE)),
-                $qb->expr()->lt('expiry', $qb->createNamedParameter(new \DateTime(), IQueryBuilder::PARAM_DATE))
-            );
+                $qb->expr()->lt('created', $qb->createNamedParameter($maxCreated, IQueryBuilder::PARAM_DATE)),
+                $qb->expr()->lt('expiry', $qb->createNamedParameter($maxExpiry, IQueryBuilder::PARAM_DATE))
+            )->execute();
     }
 
 }

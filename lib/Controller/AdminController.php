@@ -19,9 +19,9 @@
  *
  */
 
-namespace OCA\cas\Controller;
+namespace OCA\Cas\Controller;
 
-use OCA\cas\Service\SettingsService;
+use OCA\Cas\Service\SettingsService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;

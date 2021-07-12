@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\cas\Controller;
+namespace OCA\Cas\Controller;
 
 use OCP\AppFramework\Http\Response;
 

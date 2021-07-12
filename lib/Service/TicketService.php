@@ -19,10 +19,10 @@
  *
  */
 
-namespace OCA\cas\Service;
+namespace OCA\Cas\Service;
 
-use OCA\cas\Domain\Ticket;
-use OCA\cas\Domain\TicketMapper;
+use OCA\Cas\Domain\Ticket;
+use OCA\Cas\Domain\TicketMapper;
 use OCP\IGroup;
 use OCP\IGroupManager;
 use OCP\IUser;

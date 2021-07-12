@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\cas\Migration;
+namespace OCA\Cas\Migration;
 
 
 use OCP\DB\ISchemaWrapper;

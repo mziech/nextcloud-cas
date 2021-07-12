@@ -19,7 +19,7 @@
  *
  */
 
-namespace OCA\cas\Service;
+namespace OCA\Cas\Service;
 
 
 use Throwable;
