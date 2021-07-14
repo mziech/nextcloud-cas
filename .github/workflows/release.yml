@@ -36,18 +36,18 @@ jobs:
         uses: actions/download-artifact@v2.0.10
         with:
           name: ${{ env.APP_NAME }}
-          path: ${{ env.APP_NAME }}.tar.gz
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         id: upload_release
         with:
-          files: cas.tar.gz
+          files: ${{ env.APP_NAME }}.tar.gz
           prerelease: ${{ contains(github.ref, '-') }}  # following semver spec
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload app to Nextcloud appstore
         uses: R0Wi/nextcloud-appstore-push-action@a011fe619bcf6e77ddebc96f9908e1af4071b9c1
+        if: "!contains(github.ref, 'alpha')"
         with:
           app_name: ${{ env.APP_NAME }}
           appstore_token: ${{ secrets.APPSTORE_TOKEN }}
