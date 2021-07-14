@@ -17,24 +17,26 @@ jobs:
       - name: Build
         run: npm install && npm run build
 
-  package:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Pack
         run: touch ${{ env.APP_NAME }}.tar.gz && tar --exclude-ignore=.appignore --transform 's,^\./,${{ env.APP_NAME }}/,' -cvzf ${{ env.APP_NAME }}.tar.gz .
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2.2.0
+        uses: actions/upload-artifact@v2.2.4
         with:
-          name: distribution
+          name: ${{ env.APP_NAME }}
           path: ${{ env.APP_NAME }}.tar.gz
+          if-no-files-found: error
 
   release:
     environment: release
-    needs: package
+    needs: build
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.10
+        with:
+          name: ${{ env.APP_NAME }}
+          path: ${{ env.APP_NAME }}.tar.gz
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         id: upload_release
