@@ -7,14 +7,13 @@
     <description><![CDATA[
         This is an very basic and experimental implementation of the CAS server protocol for Nextcloud.
         It is not another user backend for Nextcloud, instead it allows you to authenticate 3rd-party or
-        custom web applications against the Nextcloud user database.
-
+        custom web applications against the Nextcloud user database.\n\n
         If you are creating a custom application and you want to integrate it seemlessly with Nextcloud login,
         you can either follow the CAS protocol specification at
         https://apereo.github.io/cas/4.2.x/protocol/CAS-Protocol-Specification.html
         or better use one of the many available CAS client libraries.
     ]]></description>
-    <version>0.2.1</version>
+    <version>0.2.4</version>
     <licence>agpl</licence>
     <author>Marco Ziech &lt;marco+nc@ziech.net&gt;</author>
     <namespace>Cas</namespace>
