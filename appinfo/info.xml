@@ -13,7 +13,7 @@ If you are creating a custom application and you want to integrate it seemlessly
 you can either follow the [CAS protocol specification](https://apereo.github.io/cas/4.2.x/protocol/CAS-Protocol-Specification.html)
 or better use one of the many available CAS client libraries.
     ]]></description>
-    <version>0.2.6</version>
+    <version>0.2.7</version>
     <licence>agpl</licence>
     <author>Marco Ziech</author>
     <namespace>Cas</namespace>

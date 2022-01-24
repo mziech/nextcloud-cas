@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Copyright (c) 2019 Marco Ziech <marco+nc@ziech.net>
+ * @copyright Copyright (c) 2022 Marco Ziech <marco+nc@ziech.net>
  *
  * @license GNU AGPL version 3 or any later version
  *
@@ -26,7 +26,7 @@ use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IMigrationStep;
 use OCP\Migration\IOutput;
 
-class Version001Initial implements IMigrationStep {
+class Version002Id implements IMigrationStep {
 
     /**
      * Human readable name of the migration step
@@ -35,7 +35,7 @@ class Version001Initial implements IMigrationStep {
      * @since 14.0.0
      */
     public function name(): string {
-        return "Initial creation of tables";
+        return "Add ID, rename expiry index";
     }
 
     /**
@@ -45,7 +45,7 @@ class Version001Initial implements IMigrationStep {
      * @since 14.0.0
      */
     public function description(): string {
-        return "Initial creation of tables";
+        return "Add surrogate ID to satisfy QBMapper and ensure expiry index has a defined name";
     }
 
     /**
@@ -67,27 +67,28 @@ class Version001Initial implements IMigrationStep {
     public function changeSchema(IOutput $output, \Closure $schemaClosure, array $options) {
         /** @var ISchemaWrapper $schema */
         $schema = $schemaClosure();
-        $ticketTable = $schema->createTable("cas_ticket");
-        $ticketTable->addColumn("ticket", 'string', [
-            "notnull" => true,
-            "length" => 100
+        $ticketTable = $schema->getTable("cas_ticket");
+
+        // Add surrogate ID column to make QBMapper happy
+        $ticketTable->dropPrimaryKey();
+        $ticketTable->addColumn("id", "bigint", [
+            'autoincrement' => true,
+            'notnull' => true,
+            'unsigned' => true,
         ]);
-        $ticketTable->addColumn("created", 'datetime', [
-            "notnull" => true
-        ]);
-        $ticketTable->addColumn("expiry", 'datetime', [
-            "notnull" => true
-        ]);
-        $ticketTable->addColumn("service", 'string', [
-            "length" => 4096
-        ]);
-        $ticketTable->addColumn("renew", 'smallint');
-        $ticketTable->addColumn("uid", 'string', [
-            "notnull" => true,
-            "length" => 255
-        ]);
-        $ticketTable->setPrimaryKey(["ticket"]);
-        $ticketTable->addIndex(["expiry"], "cas_ticket_expiry");
+        $ticketTable->setPrimaryKey(["id"]);
+        $ticketTable->addUniqueIndex(["ticket"], "cas_ticket_unique");
+
+        // Rename existing randomly named index on expiry
+        foreach ($ticketTable->getIndexes() as $index) {
+            $cols = $index->getColumns();
+            if (count($cols) === 1 && $cols[0] === "expiry") {
+                if ($index->getName() !== "cas_ticket_expiry") {
+                    $ticketTable->renameIndex($index->getName(), "cas_ticket_expiry");
+                }
+                break;
+            }
+        }
 
         return $schema;
     }

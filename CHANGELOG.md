@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.7] - 2022-01-25
+### Fixed
+- Fixed PostgreSQL compatibility by adding surrogate `id` column ([#5](https://github.com/mziech/nextcloud-cas/issues/5))
+- Fixed randomly generated name for expiry index
+
 ## [0.2.6] - 2022-01-19
 ### Added
 - Nextcloud 23 compatibility
