@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.8] - 2022-01-19
+### Added
+- Nextcloud 24 compatibility, fixed service column length ([#8](https://github.com/mziech/nextcloud-cas/issues/8))
+
 ## [0.2.7] - 2022-01-25
 ### Fixed
 - Fixed PostgreSQL compatibility by adding surrogate `id` column ([#5](https://github.com/mziech/nextcloud-cas/issues/5))

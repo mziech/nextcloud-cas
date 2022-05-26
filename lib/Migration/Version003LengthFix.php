@@ -26,7 +26,7 @@ use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IMigrationStep;
 use OCP\Migration\IOutput;
 
-class Version002Id implements IMigrationStep {
+class Version003LengthFix implements IMigrationStep {
 
     /**
      * Human readable name of the migration step
@@ -69,26 +69,9 @@ class Version002Id implements IMigrationStep {
         $schema = $schemaClosure();
         $ticketTable = $schema->getTable("cas_ticket");
 
-        // Add surrogate ID column to make QBMapper happy
-        $ticketTable->dropPrimaryKey();
-        $ticketTable->addColumn("id", "bigint", [
-            'autoincrement' => true,
-            'notnull' => true,
-            'unsigned' => true,
+        $ticketTable->changeColumn("service", [
+            "length" => 2000
         ]);
-        $ticketTable->setPrimaryKey(["id"], "cas_ticket_id");
-        $ticketTable->addUniqueIndex(["ticket"], "cas_ticket_unique");
-
-        // Rename existing randomly named index on expiry
-        foreach ($ticketTable->getIndexes() as $index) {
-            $cols = $index->getColumns();
-            if (count($cols) === 1 && $cols[0] === "expiry") {
-                if ($index->getName() !== "cas_ticket_expiry") {
-                    $ticketTable->renameIndex($index->getName(), "cas_ticket_expiry");
-                }
-                break;
-            }
-        }
 
         return $schema;
     }

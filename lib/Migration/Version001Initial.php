@@ -79,14 +79,14 @@ class Version001Initial implements IMigrationStep {
             "notnull" => true
         ]);
         $ticketTable->addColumn("service", 'string', [
-            "length" => 4096
+            "length" => 2000
         ]);
         $ticketTable->addColumn("renew", 'smallint');
         $ticketTable->addColumn("uid", 'string', [
             "notnull" => true,
             "length" => 255
         ]);
-        $ticketTable->setPrimaryKey(["ticket"]);
+        $ticketTable->setPrimaryKey(["ticket"], "cas_ticket_primary");
         $ticketTable->addIndex(["expiry"], "cas_ticket_expiry");
 
         return $schema;
