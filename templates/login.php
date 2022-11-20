@@ -23,7 +23,7 @@
 /** @var $_ array */
 
 $manifest = json_decode(file_get_contents(__DIR__ . "/../js/manifest.json"), true);
-script('cas', basename($manifest['login.js'], ".js"));
+\OCP\Util::addScript('cas', basename($manifest['login.js'], ".js"));
 
 ?>
 

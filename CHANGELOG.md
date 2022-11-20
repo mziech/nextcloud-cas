@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.9] - 2022-11-20
+### Changed
+- Nextcloud 25 compatibility
+- Update NPM dependencies
+
 ## [0.2.8] - 2022-01-19
 ### Added
 - Nextcloud 24 compatibility, fixed service column length ([#8](https://github.com/mziech/nextcloud-cas/issues/8))
