@@ -22,8 +22,7 @@
 /** @var $l \OCP\IL10N */
 /** @var $_ array */
 
-$manifest = json_decode(file_get_contents(__DIR__ . "/../js/manifest.json"), true);
-\OCP\Util::addScript('cas', basename($manifest['login.js'], ".js"));
+\OCP\Util::addScript('cas', 'cas-login');
 
 ?>
 

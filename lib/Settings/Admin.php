@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace OCA\Cas\Settings;
 
 use OCP\AppFramework\Http\TemplateResponse;
-use OCP\IURLGenerator;
 use OCP\Settings\ISettings;
 
 class Admin implements ISettings {
@@ -42,6 +41,6 @@ class Admin implements ISettings {
 	}
 
 	public function getPriority(): int {
-		return 0;
+		return 50;
 	}
 }

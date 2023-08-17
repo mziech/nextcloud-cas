@@ -1,4 +1,4 @@
-<?php
+,<?php
 /**
  * @copyright Copyright (c) 2019 Marco Ziech <marco+nc@ziech.net>
  *
@@ -22,8 +22,7 @@
 /** @var $l \OCP\IL10N */
 /** @var $_ array */
 
-$manifest = json_decode(file_get_contents(__DIR__ . "/../js/manifest.json"), true);
-\OCP\Util::addScript('cas', basename($manifest['settings.js']));
+\OCP\Util::addScript('cas', 'cas-settings');
 ?>
 
 <div id="cas-settings"></div>
