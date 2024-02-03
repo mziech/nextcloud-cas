@@ -96,7 +96,7 @@
 import { showError } from '@nextcloud/dialogs'
 import { translate as t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
-import {NcMultiselect} from "@nextcloud/vue";
+import NcMultiselect from "@nextcloud/vue/dist/Components/NcMultiselect";
 import axios from '@nextcloud/axios'
 import Vue from 'vue'
 
