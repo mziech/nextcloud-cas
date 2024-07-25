@@ -13,7 +13,7 @@ If you are creating a custom application and you want to integrate it seemlessly
 you can either follow the [CAS protocol specification](https://apereo.github.io/cas/4.2.x/protocol/CAS-Protocol-Specification.html)
 or better use one of the many available CAS client libraries.
     ]]></description>
-    <version>0.2.12</version>
+    <version>0.2.13</version>
     <licence>agpl</licence>
     <author>Marco Ziech</author>
     <namespace>Cas</namespace>
@@ -28,7 +28,7 @@ or better use one of the many available CAS client libraries.
     <screenshot>https://raw.githubusercontent.com/mziech/nextcloud-cas/master/img/screenshot.jpg</screenshot>
     <dependencies>
         <owncloud min-version="10"/>
-        <nextcloud min-version="26" max-version="28"/>
+        <nextcloud min-version="26" max-version="29"/>
     </dependencies>
     <background-jobs>
         <job>OCA\Cas\Job\TicketCleanupJob</job>
