@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.14] - 2024-10-11
+### Changed
+- Nextcloud 30 compatibility
+- Dependency updates
+
 ## [0.2.13] - 2024-07-26
 ### Changed
 - Nextcloud 29 compatibility

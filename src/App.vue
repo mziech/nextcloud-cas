@@ -55,7 +55,7 @@
 							</select>
 						</td>
 						<td>
-							<NcMultiselect v-model="service.groups"
+							<NcSelect v-model="service.groups"
 								:options="groups"
 								class="multiselect-vue multiselect--multiple"
 								label="label"
@@ -96,14 +96,14 @@
 import { showError } from '@nextcloud/dialogs'
 import { translate as t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
-import NcMultiselect from "@nextcloud/vue/dist/Components/NcMultiselect";
+import NcSelect from "@nextcloud/vue/dist/Components/NcSelect.js";
 import axios from '@nextcloud/axios'
 import Vue from 'vue'
 
 export default Vue.extend({
 	name: 'App',
 	components: {
-		NcMultiselect,
+		NcSelect,
 	},
 	computed: {
 		l10n: () => ({
