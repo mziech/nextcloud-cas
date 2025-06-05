@@ -28,21 +28,15 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataDisplayResponse;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Http\TemplateResponse;
-use OCP\ILogger;
 use OCP\IRequest;
+use Psr\Log\LoggerInterface;
 
 class CasController extends Controller {
     private $userId;
-    /**
-     * @var TicketService
-     */
-    private $ticketService;
-    /**
-     * @var ILogger
-     */
-    private $logger;
+    private TicketService $ticketService;
+    private LoggerInterface $logger;
 
-    public function __construct($AppName, IRequest $request, $UserId, TicketService $ticketService, ILogger $logger) {
+    public function __construct($AppName, IRequest $request, $UserId, TicketService $ticketService, LoggerInterface $logger) {
         parent::__construct($AppName, $request);
         $this->userId = $UserId;
         $this->ticketService = $ticketService;
@@ -83,7 +77,7 @@ class CasController extends Controller {
             $attrs = $this->ticketService->getAttributes($ticket, $service, $renew);
             $text = "yes\n" . $attrs["serviceResponse"]["authenticationSuccess"]["user"] . "\n";
         } catch (\Exception $e) {
-            $this->logger->info("Rejecting CAS ticket validate due to: " . $e->getMessage(), ["appName" => $this->appName]);
+            $this->logger->info("Rejecting CAS ticket validate due to: " . $e->getMessage());
         }
 
         return new DataDisplayResponse(
