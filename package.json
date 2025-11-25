@@ -23,14 +23,14 @@
     "@babel/preset-env": "^7.20.2",
     "@nextcloud/axios": "^2.3.0",
     "@nextcloud/browserslist-config": "^3.0.1",
-    "@nextcloud/dialogs": "^5.3.7",
+    "@nextcloud/dialogs": "^7.1.0",
     "@nextcloud/eslint-config": "^8.2.1",
     "@nextcloud/eslint-plugin": "^2.0.0",
     "@nextcloud/l10n": "^3.1.0",
     "@nextcloud/router": "^3.0.1",
     "@nextcloud/vue": "^8.19.0",
     "@nextcloud/webpack-vue-config": "^6.2.0",
-    "babel-loader": "^9.1.2",
+    "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^8.28.0",
     "eslint-config-standard": "^17.0.0",
@@ -54,7 +54,7 @@
     "vue-loader": "^15.10.1",
     "vue-template-compiler": "^2.7.16",
     "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-manifest-plugin": "^5.0.0"
+    "webpack-cli": "^6.0.1",
+    "webpack-manifest-plugin": "^6.0.1"
   }
 }
