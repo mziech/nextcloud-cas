@@ -22,7 +22,10 @@
 /** @var $l \OCP\IL10N */
 /** @var $_ array */
 
-\OCP\Util::addScript('cas', 'cas-settings');
+use OCP\Util;
+
+Util::addScript("cas", "cas-settings");
+Util::addStyle("cas", "cas-settings");
 ?>
 
 <div id="cas-settings"></div>

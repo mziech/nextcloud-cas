@@ -29,6 +29,7 @@ use OCP\AppFramework\Http\DataDisplayResponse;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
+use OCP\Util;
 use Psr\Log\LoggerInterface;
 
 class CasController extends Controller {
@@ -63,6 +64,8 @@ class CasController extends Controller {
             $model["errorCode"] = $exception->getCasCode();
         }
 
+        Util::addScript($this->appName, "cas-login");
+        Util::addStyle($this->appName, "cas-login");
         return new TemplateResponse($this->appName, "login", $model, "guest");
     }
 

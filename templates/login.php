@@ -21,9 +21,6 @@
 
 /** @var $l \OCP\IL10N */
 /** @var $_ array */
-
-\OCP\Util::addScript('cas', 'cas-login');
-
 ?>
 
 <?php if (isset($_["errorCode"]) && $_["errorCode"] === "FORBIDDEN") { ?>

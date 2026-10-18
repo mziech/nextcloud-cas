@@ -96,11 +96,10 @@
 import { showError } from '@nextcloud/dialogs'
 import { translate as t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
-import NcSelect from "@nextcloud/vue/dist/Components/NcSelect.js";
+import NcSelect from '@nextcloud/vue/components/NcSelect';
 import axios from '@nextcloud/axios'
-import Vue from 'vue'
 
-export default Vue.extend({
+export default {
 	name: 'App',
 	components: {
 		NcSelect,
@@ -163,5 +162,5 @@ export default Vue.extend({
 				.then(() => { this.saving = false })
 		},
 	},
-})
+}
 </script>
