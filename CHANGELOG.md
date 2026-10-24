@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.22] - 2026-10-24
+### Fixed
+- Removed unneeded CSS from login-redirect page
+
 ## [0.2.21] - 2026-10-19
 ### Changed
 - Verified Nextcloud 35 compatibility

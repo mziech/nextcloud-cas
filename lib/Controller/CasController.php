@@ -65,7 +65,6 @@ class CasController extends Controller {
         }
 
         Util::addScript($this->appName, "cas-login");
-        Util::addStyle($this->appName, "cas-login");
         return new TemplateResponse($this->appName, "login", $model, "guest");
     }
 
